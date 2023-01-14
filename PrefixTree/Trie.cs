@@ -8,11 +8,11 @@ namespace PrefixTree
 {
     public class Trie
     {
-        static Random rnd = new Random();
         Node root;
         public Trie()
         {
             root = new Node();
+            root.IsLeaf = false;
         }
         public void Insert(string word, int key)
         {
@@ -52,6 +52,18 @@ namespace PrefixTree
             }
             return node;
         }
+        public void Delete(string word)
+        {
+            Node node = root;
+            char[] chars = word.ToCharArray();
+            int count = 0;
+            while (count < chars.Length - 1)
+            {
+                node = node.Childs[chars[count]];
+                count++;
+            }
+            node.Childs[chars[count]] = null;
+        }
         public bool StartsWith(string prefix)
         {
             Node node = root;
@@ -60,7 +72,7 @@ namespace PrefixTree
             while (count < chars.Length)
             {
                 node = node.Childs[chars[count]];
-                if(node == null) return false;
+                if (node == null) return false;
                 count++;
             }
 

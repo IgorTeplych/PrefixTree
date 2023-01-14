@@ -11,6 +11,7 @@ namespace PrefixTree
         public Node()
         {
             Childs = new Node[128];
+            this.IsLeaf = true;
         }
         public Node Next(char c)
         {
