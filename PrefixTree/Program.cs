@@ -4,22 +4,31 @@ static class Programm
 {
     public static void Main()
     {
-        Trie trie = new Trie();
-        trie.Insert("cat", 10);
-        trie.Insert("rat", 20);
-        var cat = trie.Contains("cat");
-        var rat = trie.Contains("rat");
+        
+    }
 
-        var __cat = trie.Search("cat");
-        var __rat = trie.Search("rat");
 
-        var catb = trie.StartsWith("ca");
-        var _cat = trie.StartsWith("ac");
+    static Random random = new Random();
+    static int[] GetRandomNumbers(int N)
+    {
+        int[] mass = new int[N];
+        for (int i = 0; i < N; i++)
+        {
+            if (i != N)
+                mass[i] = random.Next(1, int.MaxValue);
+        }
+        return mass;
+    }
 
-        trie.Delete("cat");
-         __cat = trie.Search("cat");
-        cat = trie.Contains("cat");
-        rat = trie.Contains("rat");
+    static int[] GetOrderNumbers(int N)
+    {
+        int[] mass = new int[N];
+        for (int i = 1; i < N; i++)
+        {
+            if (i != N)
+                mass[i] = i;
+        }
+        return mass;
     }
 }
 

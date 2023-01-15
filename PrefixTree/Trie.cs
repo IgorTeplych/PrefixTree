@@ -62,7 +62,8 @@ namespace PrefixTree
                 node = node.Childs[chars[count]];
                 count++;
             }
-            node.Childs[chars[count]] = null;
+            if (node.Childs[chars[count]].IsLeaf)
+                node.Childs[chars[count]] = null;
         }
         public bool StartsWith(string prefix)
         {
