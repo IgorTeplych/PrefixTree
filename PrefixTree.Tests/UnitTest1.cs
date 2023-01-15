@@ -4,7 +4,7 @@ namespace PrefixTree.Tests
     {
         [SetUp]
         public void Setup()
-        {
+        { 
         }
 
         [Test]
@@ -13,7 +13,7 @@ namespace PrefixTree.Tests
             Trie trie = new Trie();
             trie.Insert("cat", 10);
             trie.Insert("owl", 20);
-            trie.Insert("dog", 30);
+            trie.Insert("dog", 30);  
             trie.Insert("elephant", 40);
             trie.Insert("hippo", 50);
             trie.Insert("car", 60);
